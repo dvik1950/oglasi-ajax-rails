@@ -4,7 +4,7 @@
   <% if logged_in? %>
     <%= link_to "Postavi oglas!", new_post_path, class: "btn btn-lg btn-primary" %>
     <%else %>
-    <h3> Ulogujte se ili kreirajte nalog da biste napravili oglas i dobili kontakt drugih oglasa:</h3>
+    <h3> Ulogujte se ili kreirajte nalog da biste postavili oglas:</h3>
     <%= link_to "Napravi nalog!", signup_path, class: "btn btn-lg btn-primary" %>
     <%= link_to "Uloguj se!", login_path, class: "btn btn-lg btn-primary" %>
     <%end %>
