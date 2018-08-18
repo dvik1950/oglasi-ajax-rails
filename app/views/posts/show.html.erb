@@ -1,0 +1,16 @@
+<ul id="posts">
+
+    <li id="post-<%= @post.id %>">
+      <%if logged_in? %>
+        <%= gravatar_for @post.user %>
+        <span class="user"><%= link_to @post.user.name, @post.user %></span> wrote: "
+      <%else%>
+        <span class="user">Anonymous wrote: " </span>
+      <% end %>
+      <span class="content"><%= @post.content %></span> "
+      <span class="timestamp">
+     <%= time_ago_in_words(@post.created_at) %> ago.
+  </span>
+    </li>
+
+</ul>

@@ -1,0 +1,26 @@
+<h1>All Posts</h1>
+
+<ul id="posts">
+  <% @posts.each do |post| %>
+    <ol class="posts">
+      <li class="list-group-item">
+    <li id="post-<%= post.id %>">
+      <center>
+    <%if logged_in? %>
+     <h1> <span class="user"><%= link_to post.user.name, post.user %></span> wrote: </h1>
+        <%else%>
+      <h1>  <span class="user">Anonymous wrote:  </span> </h1>
+      <% end %>
+     <h3> <span class="content"><%= post.content %></span> </h3>
+      <span class="timestamp">
+     <%= time_ago_in_words(post.created_at) %> ago.
+  </span>
+      </center>
+    </li>
+      </li>
+  <% end %>
+  </ol>
+</ul>
+
+
+
