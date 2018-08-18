@@ -2,11 +2,14 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@post) do |f| %>
 
-      <%= f.label :content %>
+      <h3>Sadrzaj oglasa:</h3>
       <%= f.text_field :content, class: 'form-control' %>
 
 
-      <%= f.submit "Submit post", class: "btn btn-primary" %>
+      <h3>Kontakt telefon ili e-mail:</h3>
+      <%= f.text_field :kontakt, class: 'form-control' %>
+
+      <%= f.submit "Postavi oglas", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

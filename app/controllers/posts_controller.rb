@@ -16,10 +16,11 @@ class PostsController < ApplicationController
     redirect_to root_path unless logged_in?
     @post = Post.new(
         user_id: current_user.id,
-        content: params[:post][:content])
+        content: params[:post][:content],
+        kontakt: params[:post][:kontakt])
     if @post.save
       redirect_to posts_path
-      flash[:success] = "Post was successfully created!"
+      flash[:success] = "Oglas uspesno postavljen"
     else
       render 'new'
     end

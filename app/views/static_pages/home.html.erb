@@ -1,10 +1,12 @@
 <div class="center jumbotron">
-  <h1>Members-only</h1>
-  <h3>A website to dedicated to trash talking</h3>
+  <h1>Oglasi</h1>
+  <h3>Sajt namenjen studentskim oglasima!</h3>
   <% if logged_in? %>
-    <%= link_to "Make a post!", new_post_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Postavi oglas!", new_post_path, class: "btn btn-lg btn-primary" %>
     <%else %>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    <h3> Ulogujte se ili kreirajte nalog da biste napravili oglas i dobili kontakt drugih oglasa:</h3>
+    <%= link_to "Napravi nalog!", signup_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Uloguj se!", login_path, class: "btn btn-lg btn-primary" %>
     <%end %>
 </div>
 

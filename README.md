@@ -1,5 +1,23 @@
-# Members-only, a Rails website
+# Oglasi, Ruby on rails + Ajax
 
-## About
+## Opis
 
-A Gossip clone website. Everyone can see posts on the website. Only loged-in members can posts and see who's the author of other posts.
+Aplikacija za postavljanje oglasa. 
+
+#### Koriscene sledece tehnologije:
+
+HTML
+CSS (Bootstrap gem za Rails)
+JavaScript (jQuery)
+Runy on Rails 
+
+#### Sadrzi sledece funkcionalnosti:
+
+- Postavljanje oglasa (Sa snimanjem oglasa pre postavljanje kroz razlicite page-ove pomocu Javascripta)
+- Login/Logout
+- Razliciti prikazi za ulogovanog i neulogovanog korisnika
+- Sezone (Cuvanje podataka o korisniku nakon gasenja sajta bez logout-a)
+
+
+
+
