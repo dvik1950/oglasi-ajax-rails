@@ -1,5 +1,9 @@
 <h1>All Posts</h1>
 
+<center>
+  <%= link_to "Postavi oglas!", new_post_path, id: "postavi_oglas", class: "btn btn-lg btn-primary", remote: true %>
+</center>
+
 <ul id="posts">
   <% @posts.each do |post| %>
     <ol class="posts">
@@ -16,12 +20,14 @@
       <span class="timestamp">
      <%= time_ago_in_words(post.created_at) %> ago.
   </span>
+        <%if logged_in? %>
+        <%= link_to "izbrisi", post, method: :delete,
+                    data: { confirm: "Da li ste sigurni?" } %>
+          <% end %>
       </center>
     </li>
       </li>
   <% end %>
   </ol>
 </ul>
-
-
 

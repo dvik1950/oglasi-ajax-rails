@@ -20,7 +20,7 @@ class PostsController < ApplicationController
         kontakt: params[:post][:kontakt])
     if @post.save
       redirect_to posts_path
-      flash[:success] = "Oglas uspesno postavljen"
+      flash[:success] = "Oglas uspesno postavljen."
     else
       render 'new'
     end
@@ -30,6 +30,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:success] = "Oglas je uspesno izbrisan!"
+    redirect_to posts_path
   end
 
   def update
