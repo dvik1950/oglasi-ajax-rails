@@ -9,13 +9,27 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user =User.new(user_params)
+    @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Congratulations, you're now a member, #{@user[:name]}!"
+      flash[:success] = "Dobrodosli na Oglase, #{@user[:name]}!"
       redirect_to @user
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profil uspesno izmenjen!"
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
 
